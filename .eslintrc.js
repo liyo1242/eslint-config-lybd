@@ -1,13 +1,6 @@
-// * 0 = off, 1 = warning, 2 = error
-
 module.exports = {
   parser: '@typescript-eslint/parser',
-  extends: [
-    'next/core-web-vitals',
-    'plugin:@next/next/recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-  ],
+  extends: ['plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
   plugins: ['@typescript-eslint', 'prettier'],
   ignorePatterns: [
     '.d.ts',
@@ -24,10 +17,6 @@ module.exports = {
     browser: true,
     node: true,
     jest: true,
-  },
-  globals: {
-    React: true,
-    JSX: true,
   },
   rules: {
     semi: ['error', 'never'],
@@ -63,7 +52,7 @@ module.exports = {
       },
     ],
     'no-redeclare': 'off',
-    '@typescript-eslint/no-unused-vars': [
+    'no-unused-vars': [
       'error',
       {
         argsIgnorePattern: '^_|res|next|^err',
@@ -71,7 +60,7 @@ module.exports = {
         ignoreRestSiblings: true,
       },
     ],
-    'no-unused-vars': [
+    '@typescript-eslint/no-unused-vars': [
       'error',
       {
         argsIgnorePattern: '^_|res|next|^err',
