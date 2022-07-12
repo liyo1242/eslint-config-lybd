@@ -21,6 +21,7 @@ steps:
   inputs:
     Contents: |
      package.json
+     *.md
      *.js
     TargetFolder: dist
   condition: ne(variables['Build.Reason'], 'PullRequest')
