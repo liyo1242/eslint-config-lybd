@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-lybd",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ESLint and Prettier Config for Small Project",
   "main": "index.js",
   "keywords": [
