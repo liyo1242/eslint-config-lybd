@@ -1,0 +1,33 @@
+pool:
+  name: Azure Pipelines
+  demands: npm
+
+steps:
+- task: Npm@1
+  displayName: 'npm install'
+  inputs:
+    verbose: false
+
+- task: Npm@1
+  displayName: 'npm custom'
+  inputs:
+    command: custom
+    verbose: false
+    customCommand: 'run test'
+    publishEndpoint: 'npm publish'
+
+- task: CopyFiles@2
+  displayName: 'Copy Files to: dist'
+  inputs:
+    Contents: |
+     package.json
+     *.js
+    TargetFolder: dist
+  condition: ne(variables['Build.Reason'], 'PullRequest')
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  inputs:
+    PathtoPublish: dist
+  condition: ne(variables['Build.Reason'], 'PullRequest')
+
