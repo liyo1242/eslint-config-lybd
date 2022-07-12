@@ -1,16 +1,24 @@
 {
   "name": "eslint-config-lybd",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "ESLint and Prettier Config for Small Project",
   "main": "index.js",
   "keywords": [
     "lybd"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix"
+    "lint:next": "eslint -c ./next.js .",
+    "lint:react": "eslint -c ./react.js .",
+    "test": "npm run --silent lint && npm run --silent lint:next && npm run --silent lint:react",
+    "version": "auto-changelog -p && git add CHANGELOG.md",
+    "release": "standard-version"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liyo1242/eslint-config-lybd"
+  },
+  "homepage": "https://github.com/liyo1242/eslint-config-lybd",
   "author": "",
   "license": "ISC",
   "peerDependencies": {
@@ -35,6 +43,7 @@
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^2.7.1",
+    "standard-version": "^9.5.0",
     "typescript": "^4.7.4"
   }
 }
