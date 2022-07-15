@@ -13,7 +13,7 @@ I want to be able to use this pkg to manage most of my personal mini-projects ðŸ
 2. And then install config setting pkg, after success you will see that in ```package.json``` devDependencies
 
     ```bash
-    npm install eslint-config-lybd --save-dev
+    npx install-peerdeps --dev eslint-config-lybd
     ```
 
 3. Create a ```.eslintrc``` file and add the following content
