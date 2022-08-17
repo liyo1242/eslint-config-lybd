@@ -36,7 +36,7 @@ I want to be able to use this pkg to manage most of my personal mini-projects ðŸ
 
     ```json
     {
-      "extends": [ "lybd/react" ]
+      "extends": [ "lybd/next" ]
     }
     ```
 
